@@ -1,5 +1,15 @@
 export const Create =()=>
 {
+  let movie=
+  {
+    singer:"",
+  album:"",
+  imageUrl:"",
+  release:"", 
+  label:"", 
+  sales:"",
+
+  }
     return    <section id="create">
     <div className="form">
       <h2>Add Album</h2>
