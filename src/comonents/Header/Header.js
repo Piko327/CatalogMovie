@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export const Header =()=>{
     
     return  <header>
@@ -6,19 +8,19 @@ export const Header =()=>{
 
     <nav>
       <div>
-        <a href="#">Dashboard</a>
+        <Link to="/Dashboard">Dashboard</Link>
       </div>
 
       {/* <!-- Logged-in users --> */}
       <div class="user">
-        <a href="#">Add Album</a>
-        <a href="#">Logout</a>
+        <Link to="/Create">Add Album</Link>
+        <Link to="/Logout">Logout</Link>
       </div>
 
       {/* <!-- Guest users --> */}
       <div class="guest">
-        <a href="#">Login</a>
-        <a href="#">Register</a>
+        <Link href="/Login">Login</Link>
+        <Link to="/Register">Register</Link>
       </div>
     </nav>
   </header>

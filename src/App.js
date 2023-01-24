@@ -8,34 +8,36 @@ import { Login } from './comonents/Login/Login';
 import { Create } from './comonents/Create/Create';
 import { Details } from './comonents/Details/Details';
 import { Edit } from './comonents/Edit/Edit';
+import { Route, Router } from 'react-router-dom';
 function App() {
+
+
+
+
   return (
     <div className="App">
     <body>
   <div id="wrapper">
-   <Header/>
-
+  < Header/>
     <main>
-      {/* <!-- Home page --> */}
-    <Home/>
-{/* 
-      {/* <!-- Dashboard page --> */}
-    <Dashboard/>
-
-      {/* <!-- Register Page (Only for Guest users) --> */}
-     <Register/>
-
-      {/* <!-- Login Page (Only for Guest users) --> */}
-  <Login/>
-
-      {/* <!-- Create Page (Only for logged-in users) --> */}
-   <Create/>
-      {/* <!-- Details page --> */}
-  <Details/>
-<Edit/>
+    <Router>
+   
+    <Route path='/' element={ <Home/>}/>
+    <Route path='/Dashboard' element={<Dashboard/>}/>
+    <Route path='/Register' element={<Register/> }/>
+    <Route path='/Login' element={<Login/> }/>
+    <Route path='/Create' element={<Create/>}/>
+    <Route path='/Details' element={<Details/>}/>
+    <Route path='/Edit' element={<Edit/>}/>
+    <Edit/>
+ 
   
 
+
+
+    </Router>
     </main>
+ 
   </div>
   <footer>
     <p>@MusicLibrary</p>
