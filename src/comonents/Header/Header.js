@@ -12,14 +12,14 @@ export const Header =()=>{
       </div>
 
       {/* <!-- Logged-in users --> */}
-      <div class="user">
+      <div className="user">
         <Link to="/Create">Add Album</Link>
         <Link to="/Logout">Logout</Link>
       </div>
 
       {/* <!-- Guest users --> */}
-      <div class="guest">
-        <Link href="/Login">Login</Link>
+      <div className="guest">
+        <Link to="/Login">Login</Link>
         <Link to="/Register">Register</Link>
       </div>
     </nav>

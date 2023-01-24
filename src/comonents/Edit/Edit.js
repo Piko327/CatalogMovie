@@ -1,9 +1,9 @@
 export const Edit =()=>
 {
     return    <section id="edit">
-    <div class="form">
+    <div className="form">
       <h2>Edit Album</h2>
-      <form class="edit-form">
+      <form className="edit-form">
         <input type="text" name="singer" id="album-singer" placeholder="Singer/Band" />
         <input type="text" name="album" id="album-album" placeholder="Album" />
         <input type="text" name="imageUrl" id="album-img" placeholder="Image url" />

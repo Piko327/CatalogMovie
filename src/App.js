@@ -8,19 +8,16 @@ import { Login } from './comonents/Login/Login';
 import { Create } from './comonents/Create/Create';
 import { Details } from './comonents/Details/Details';
 import { Edit } from './comonents/Edit/Edit';
-import { Route, Router } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 function App() {
 
-
-
-
   return (
-    <div className="App">
+ 
     <body>
-  <div id="wrapper">
+  
   < Header/>
     <main>
-    <Router>
+ <Routes>
    
     <Route path='/' element={ <Home/>}/>
     <Route path='/Dashboard' element={<Dashboard/>}/>
@@ -29,21 +26,21 @@ function App() {
     <Route path='/Create' element={<Create/>}/>
     <Route path='/Details' element={<Details/>}/>
     <Route path='/Edit' element={<Edit/>}/>
-    <Edit/>
+      
  
   
 
 
-
-    </Router>
+    </Routes>
     </main>
  
-  </div>
+
+
   <footer>
     <p>@MusicLibrary</p>
   </footer>
 </body>
-    </div>
+   
   );
 }
 

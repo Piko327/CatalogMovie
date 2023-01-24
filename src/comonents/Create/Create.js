@@ -1,9 +1,9 @@
 export const Create =()=>
 {
     return    <section id="create">
-    <div class="form">
+    <div className="form">
       <h2>Add Album</h2>
-      <form class="create-form">
+      <form className="create-form">
         <input type="text" name="singer" id="album-singer" placeholder="Singer/Band" />
         <input type="text" name="album" id="album-album" placeholder="Album" />
         <input type="text" name="imageUrl" id="album-img" placeholder="Image url" />
