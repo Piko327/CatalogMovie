@@ -9,8 +9,9 @@ import { Create } from './comonents/Create/Create';
 import { Details } from './comonents/Details/Details';
 import { Edit } from './comonents/Edit/Edit';
 import { Route, Routes } from 'react-router-dom';
-function App() {
 
+function App() {
+  
   return (
  
     <body>
