@@ -10,7 +10,7 @@ import { Details } from './comonents/Details/Details';
 import { Edit } from './comonents/Edit/Edit';
 import { Route, Routes } from 'react-router-dom';
 import { Add, getById } from './api/dataApi';
-import { AuthContext } from './api/context/AuthContext';
+import { AuthContext } from './context/AuthContext';
 import { useState } from 'react';
 function App() {
 const [auth,setAuth] = useState({})

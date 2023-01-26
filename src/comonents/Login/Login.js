@@ -1,7 +1,7 @@
 import { Link ,useNavigate} from "react-router-dom"
 import { login } from "../../api/userApi"
 import { useContext } from "react"
-import { AuthContext } from "../../api/context/AuthContext"
+import { AuthContext } from "../../context/AuthContext"
 export const Login=()=>
 {
  const navigate= useNavigate()
@@ -15,10 +15,11 @@ export const Login=()=>
     if(resp.email)
     {
       setLogin(resp)
+      
       navigate("/")
     }
     else
-    {
+    {//TO DO
       alert("go register ashole")
     }
       
