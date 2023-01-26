@@ -9,16 +9,22 @@ import { Create } from './comonents/Create/Create';
 import { Details } from './comonents/Details/Details';
 import { Edit } from './comonents/Edit/Edit';
 import { Route, Routes } from 'react-router-dom';
-import { Add, getById } from './API/api';
-
+import { Add, getById } from './api/dataApi';
+import { AuthContext } from './api/context/AuthContext';
+import { useState } from 'react';
 function App() {
- 
-  
+const [auth,setAuth] = useState({})
+
+const setLogin=(userData)=>
+{
+setAuth(userData)
+}
+
 
   return (
- 
-    <body>
-  
+ <>
+
+      <AuthContext.Provider value={{auth,setLogin}}>
   < Header/>
     <main>
  <Routes>
@@ -31,21 +37,17 @@ function App() {
     <Route path='/Details' element={<Details/>}/>
     <Route path='/Edit' element={<Edit/>}/>
       
- 
-  
-
-
     </Routes>
     </main>
  
-
-
   <footer>
     <p>@MusicLibrary</p>
   </footer>
-</body>
-   
+     </AuthContext.Provider>
+
+</>
   );
+
 }
 
 export default App;

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
+
 import { useState,useEffect } from 'react';
-import { getAll } from "../../API/api";
+import { getAll } from "../../api/dataApi";
 import { Card  } from "./Card";
 export const Dashboard =()=>
 {
