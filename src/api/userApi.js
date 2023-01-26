@@ -33,13 +33,9 @@ export async function register(data)
 
 export async function logout(token)
 
-{
-  return   fetch(URL+"/users/register", {
-        
-        headers: {
-          "X-Authorization":{token}
+{ return   fetch(URL+"/users/logout", {
+         headers: {
+          "X-Authorization":token
         }
-      })
-        .then((response) => response.json())
-       
+      })           
 }

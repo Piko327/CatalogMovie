@@ -12,6 +12,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Add, getById } from './api/dataApi';
 import { AuthContext } from './context/AuthContext';
 import { useState } from 'react';
+import { Logout } from './comonents/Logout/Logout';
 function App() {
 const [auth,setAuth] = useState({})
 
@@ -36,7 +37,7 @@ setAuth(userData)
     <Route path='/Create' element={<Create/>}/>
     <Route path='/Details' element={<Details/>}/>
     <Route path='/Edit' element={<Edit/>}/>
-      
+    <Route path='/Logout' element={<Logout/>}/>
     </Routes>
     </main>
  
