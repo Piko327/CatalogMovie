@@ -14,7 +14,7 @@ const token= auth.accessToken
 
     useEffect(()=>{
         Del(id,token)
-        
+        navigate("/Dashboard")
 
     })
 
