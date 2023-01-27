@@ -1,7 +1,15 @@
 import { Add } from "../../api/dataApi"
 import { useNavigate } from "react-router-dom"
+import { useContext } from "react"
+import { AuthContext } from "../../context/AuthContext"
 export const Create =()=>
 {
+
+  const {auth}=useContext(AuthContext)
+
+  let token = auth.accessToken
+
+  console.log(token)
 const navigate= useNavigate()
   const SubmitHandler =(e)=>
   {
@@ -24,7 +32,7 @@ e.preventDefault()
   sales,
 
   }
-  Add(movie)
+  Add(token,movie)
   
 navigate("/Dashboard")
   }
