@@ -16,15 +16,31 @@ export async function getById(id)
     return  result
 }
 
-export async function Add(data)
+export async function Add(token,data)
 {
     fetch(URL, {
   method: "POST",
   body: JSON.stringify(data),
   headers: {
-    "Content-type": "application/json; charset=UTF-8"
+    "Content-type": "application/json; charset=UTF-8",
+    "X-Authorization":token
   }
 })
   .then((response) => response.json())
   .then((json) => console.log(json));
+}
+export async function Del(id,token)
+{
+  
+    fetch(URL+"/"+id, {
+  method: "DELETE",
+
+  headers: {
+    "Content-type": "application/json; charset=UTF-8",
+   "X-Authorization": token
+  }
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+
 }

@@ -6,11 +6,9 @@ export const Create =()=>
 {
 
   const {auth}=useContext(AuthContext)
+  const token = auth.accessToken
+  const navigate= useNavigate()
 
-  let token = auth.accessToken
-
-  console.log(token)
-const navigate= useNavigate()
   const SubmitHandler =(e)=>
   {
 e.preventDefault()
@@ -22,18 +20,14 @@ e.preventDefault()
  sales,
 }=Object.fromEntries(new FormData(e.target))
 
-    let movie=
-  {
+  Add(token,{
     singer,
-  album,
-  imageUrl,
-  release, 
-  label, 
-  sales,
-
-  }
-  Add(token,movie)
-  
+    album,
+    imageUrl,
+    release, 
+    label, 
+    sales,
+   })
 navigate("/Dashboard")
   }
   

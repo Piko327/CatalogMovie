@@ -9,15 +9,13 @@ export const Logout =()=>
 let data= useContext(AuthContext)
 const token = data.auth.accessToken
 const navigate= useNavigate()
-console.log(token)
+
     useEffect(()=>{
         logout(token)
         data.setLogin({})
         navigate("/")
 
     })
-
-
 
     return null
 }

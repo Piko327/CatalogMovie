@@ -7,20 +7,20 @@ import { Register } from './comonents/Register/Register';
 import { Login } from './comonents/Login/Login';
 import { Create } from './comonents/Create/Create';
 import { Details } from './comonents/Details/Details';
+import { Delete } from './comonents/Delete/Delete';
 import { Edit } from './comonents/Edit/Edit';
 import { Route, Routes } from 'react-router-dom';
-import { Add, getById } from './api/dataApi';
 import { AuthContext } from './context/AuthContext';
 import { useState } from 'react';
 import { Logout } from './comonents/Logout/Logout';
 import { useLocalStorage } from './Hooks/useLocalStorage';
+import { DataContext } from './context/DataContext';
 function App() {
 const [auth,setAuth] = useLocalStorage('auth',{})
+const [data,setData]= useState({})
 
-const setLogin=(userData)=>
-{
-setAuth(userData)
-}
+const setLogin=(userData)=>setAuth(userData)
+const setInfo=(data)=>setData(data)
 
 
   return (
@@ -28,20 +28,21 @@ setAuth(userData)
 
       <AuthContext.Provider value={{auth,setLogin}}>
   < Header/>
+  <DataContext.Provider value={{data,setInfo}}>
     <main>
  <Routes>
-   
     <Route path='/' element={ <Home/>}/>
     <Route path='/Dashboard' element={<Dashboard/>}/>
     <Route path='/Register' element={<Register/> }/>
     <Route path='/Login' element={<Login/> }/>
     <Route path='/Create' element={<Create/>}/>
-    <Route path='/Details' element={<Details/>}/>
-    <Route path='/Edit' element={<Edit/>}/>
+    <Route path='/Details/:id' element={<Details/>}/>
+    <Route path='/Edit/:id' element={<Edit/>}/>
+    <Route path='Delete/:id' element={<Delete/>}/>
     <Route path='/Logout' element={<Logout/>}/>
-    </Routes>
+ </Routes>
     </main>
- 
+    </DataContext.Provider>
   <footer>
     <p>@MusicLibrary</p>
   </footer>
