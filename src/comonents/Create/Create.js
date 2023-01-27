@@ -16,12 +16,12 @@ e.preventDefault()
 
     let movie=
   {
-    singer:singer,
-  album:album,
-  imageUrl:imageUrl,
-  release:release, 
-  label:label, 
-  sales:sales,
+    singer,
+  album,
+  imageUrl,
+  release, 
+  label, 
+  sales,
 
   }
   Add(movie)

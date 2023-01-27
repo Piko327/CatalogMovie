@@ -13,8 +13,9 @@ import { Add, getById } from './api/dataApi';
 import { AuthContext } from './context/AuthContext';
 import { useState } from 'react';
 import { Logout } from './comonents/Logout/Logout';
+import { useLocalStorage } from './Hooks/useLocalStorage';
 function App() {
-const [auth,setAuth] = useState({})
+const [auth,setAuth] = useLocalStorage('auth',{})
 
 const setLogin=(userData)=>
 {
