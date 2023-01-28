@@ -27,7 +27,7 @@ register(dataForServer).then(resp=> {
   })
 }
 else
-{alert("pass not match")}
+{alert("password not match")}
 
  }
     return  <section id="register">
