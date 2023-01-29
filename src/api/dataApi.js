@@ -44,3 +44,16 @@ export async function Del(id,token)
   .then((json) => console.log(json));
 
 }
+export async function   AddEdit(token,data,id)
+{
+     fetch(URL+"/"+id, {
+  method: "PUT",
+  body: JSON.stringify(data),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8",
+    "X-Authorization":token
+  }
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+}
