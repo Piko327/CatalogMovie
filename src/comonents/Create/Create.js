@@ -2,7 +2,7 @@ import { Add } from "../../api/dataApi"
 import { useNavigate } from "react-router-dom"
 import { useContext } from "react"
 import { AuthContext } from "../../context/AuthContext"
-export const Create =()=>
+const  Create =()=>
 {
 
   const {auth}=useContext(AuthContext)
@@ -48,3 +48,4 @@ navigate("/Dashboard")
   </section>
 
 }
+ export default Create

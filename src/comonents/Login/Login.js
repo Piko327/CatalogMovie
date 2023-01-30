@@ -2,7 +2,7 @@ import { Link ,useNavigate} from "react-router-dom"
 import { login } from "../../api/userApi"
 import { useContext } from "react"
 import { AuthContext } from "../../context/AuthContext"
-export const Login=()=>
+ const Login=()=>
 {
  const navigate= useNavigate()
  const {setLogin,auth} =useContext(AuthContext)
@@ -43,3 +43,5 @@ export const Login=()=>
     </div>
   </section>
 } 
+
+export default Login

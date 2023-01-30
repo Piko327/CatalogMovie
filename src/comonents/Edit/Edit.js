@@ -3,8 +3,9 @@ import { useNavigate, useParams } from "react-router-dom"
 import { DataContext } from "../../context/DataContext"
 import { AddEdit } from "../../api/dataApi"
 import { AuthContext } from "../../context/AuthContext"
+import Details from "../Details/Details"
 
-export const Edit =()=>
+ const Edit =()=>
 {
   const navigate= useNavigate()
  const{data}=useContext(DataContext)
@@ -53,3 +54,5 @@ navigate("/Dashboard")
     </div>
   </section>
 }
+
+export default Details

@@ -1,18 +1,9 @@
 
 import './App.css';
-import {Header} from "../src/comonents/Header/Header"
-import { Home } from './comonents/Home/Home';
-import { Dashboard } from './comonents/Dashboard/Dashboard';
-import { Register } from './comonents/Register/Register';
-import { Login } from './comonents/Login/Login';
-import { Create } from './comonents/Create/Create';
-import { Details } from './comonents/Details/Details';
-import { Delete } from './comonents/Delete/Delete';
-import { Edit } from './comonents/Edit/Edit';
+import { Create ,Dashboard,Delete,Details,Edit,Header,Home,Logout,Login,Register } from './comonents';
 import { Route, Routes } from 'react-router-dom';
 import { AuthContext } from './context/AuthContext';
 import { useState } from 'react';
-import { Logout } from './comonents/Logout/Logout';
 import { useLocalStorage } from './Hooks/useLocalStorage';
 import { DataContext } from './context/DataContext';
 function App() {

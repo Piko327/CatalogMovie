@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { logout } from "../../api/userApi"
 import { useEffect } from "react"
 
-export const Logout =()=>
+ const Logout =()=>
 {
 let data= useContext(AuthContext)
 const token = data.auth.accessToken
@@ -19,3 +19,5 @@ const navigate= useNavigate()
 
     return null
 }
+
+export default Logout

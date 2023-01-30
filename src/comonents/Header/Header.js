@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { useContext } from "react"
 import { AuthContext } from "../../context/AuthContext"
 
-export const Header =()=>{
+const Header =()=>{
     
   const {setLogin,auth} =useContext(AuthContext)
 
@@ -40,3 +40,5 @@ export const Header =()=>{
 
     
 }
+
+export default Header

@@ -1,4 +1,4 @@
-export const Home =()=>
+ const Home =()=>
 {
     return   <section id="home">
     <img src="./images/landing.png" alt="home" />
@@ -7,3 +7,5 @@ export const Home =()=>
      <span>Discover new ones right here!</span></h2>
   </section>
 }
+
+export default Home

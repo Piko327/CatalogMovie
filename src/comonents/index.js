@@ -1,0 +1,11 @@
+export {default as Create} from "./Create/Create"
+export {default as Dashboard} from "./Dashboard/Dashboard"
+export {default as Delete} from "./Delete/Delete"
+export {default as Details} from "./Details/Details"
+export {default as Edit} from "./Edit/Edit"
+export {default as Header} from "./Header/Header"
+export {default as Home} from "./Home/Home"
+export {default as Login} from "./Login/Login"
+export {default as Logout} from "./Logout/Logout"
+export {default as Register} from "./Register/Register"
+

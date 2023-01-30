@@ -3,13 +3,14 @@ import { register } from "../../api/userApi"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
 import { useContext } from "react"
-export const Register =()=>
+ const Register =()=>
 {
 const {setLogin,auth} =useContext(AuthContext)
 const navigate =useNavigate()
 const  onSubmitHndler=(e)=>
  { 
   e.preventDefault()
+
   let data=Object.fromEntries(new FormData(e.target)) 
   let arr= Object.values(data)
   let email=arr[0]
@@ -27,7 +28,7 @@ register(dataForServer).then(resp=> {
   })
 }
 else
-{alert("password not match")}
+{}
 
  }
     return  <section id="register">
@@ -43,3 +44,5 @@ else
     </div>
   </section>
 }
+
+export default Register

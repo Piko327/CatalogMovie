@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { DataContext } from "../../context/DataContext"
 import { AuthContext } from "../../context/AuthContext"
 
-export const Details =()=>{
+ const Details =()=>{
   const{data}=useContext(DataContext)
   const{auth}=useContext(AuthContext)
   const  {id}= useParams()
@@ -39,3 +39,5 @@ export const Details =()=>{
     </div>
   </section>
 } 
+
+export default Details

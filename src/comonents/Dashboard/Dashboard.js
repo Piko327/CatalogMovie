@@ -3,7 +3,7 @@ import { useState,useEffect, useContext } from 'react';
 import { getAll } from "../../api/dataApi";
 import { DataContext } from '../../context/DataContext';
 import { Card  } from "./Card";
-export const Dashboard =()=>
+const Dashboard =()=>
 {
   
 const isEmpty =(obj) =>Object.keys(obj).length === 0;
@@ -30,3 +30,5 @@ const isEmpty =(obj) =>Object.keys(obj).length === 0;
    : <h2>There are no albums added yet.</h2>}
   </section>
 }
+
+export default Dashboard
