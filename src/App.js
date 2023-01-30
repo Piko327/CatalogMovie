@@ -2,22 +2,19 @@
 import './App.css';
 import { Create ,Dashboard,Delete,Details,Edit,Header,Home,Logout,Login,Register } from './comonents';
 import { Route, Routes } from 'react-router-dom';
-import { AuthContext } from './context/AuthContext';
+import { AuthContext, AuthProvider } from './context/AuthContext';
 import { useState } from 'react';
-import { useLocalStorage } from './Hooks/useLocalStorage';
 import { DataContext } from './context/DataContext';
 function App() {
-const [auth,setAuth] = useLocalStorage('auth',{})
-const [data,setData]= useState({})
 
-const setLogin=(userData)=>setAuth(userData)
+const [data,setData]= useState({})
 const setInfo=(data)=>setData(data)
 
 
   return (
  <>
 
-      <AuthContext.Provider value={{auth,setLogin}}>
+     <AuthProvider>
   < Header/>
   <DataContext.Provider value={{data,setInfo}}>
     <main>
@@ -37,7 +34,7 @@ const setInfo=(data)=>setData(data)
   <footer>
     <p>@MusicLibrary</p>
   </footer>
-     </AuthContext.Provider>
+  </AuthProvider>
 
 </>
   );
