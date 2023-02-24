@@ -37,7 +37,7 @@ h2 {
   max-width: 23%;
   height: 600px;
   margin: 25px auto;
-  background-color: white;
+  background-color: #ffc8c8;
   /* border-radius: 5px;
   border: 2px ridge rgb(210, 208, 208);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24); */
@@ -54,11 +54,11 @@ h2 {
 
 .details-btn {
   display: block;
-   
+  
     width: 150px;
     height: 40px;
     border: none;
-    background-color: #CBF6FF;
+    background-color: #bbb4f3;
     color: black;
     font-size: 18px;
     
