@@ -6,14 +6,13 @@
   margin: auto;
 }
 .form {
-  background: #ffc8c8;
+  background: #ffffff;
   max-width: 460px;
   margin: auto;
   margin-top: 100px;
   padding: 45px;
   text-align: center;
-  border-bottom-left-radius: 30px ;
-  border-top-right-radius: 30px ;
+  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
     color: black;
     box-shadow: 15px 15px rgba(0, 0, 0, .15);
 }
@@ -28,7 +27,7 @@
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #eceef0;
+  background: #fafafa;
   width: 90%;
   height: 50px;
   border: 0;

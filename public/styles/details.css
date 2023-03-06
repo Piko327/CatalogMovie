@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: rgb(240, 239, 239);
+  background-color: white;
   margin: 50px auto;
   min-height: 400px;
   max-width: 45%;
@@ -90,11 +90,11 @@ span {
   text-align: center;
   color: black;
   font-weight: 500;
-  background: #f3b4dd;
+  background: #CBF6FF;
   
 }
 
 #action-buttons a:hover {
   transform: rotateX(15deg);
-  box-shadow: 0 15px 15px #5877c5;
+  box-shadow: 0 15px 15px #7db9d7;
 }

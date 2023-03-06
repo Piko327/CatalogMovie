@@ -7,7 +7,7 @@ import { AuthContext } from "../../context/AuthContext"
   const{data}=useContext(DataContext)
   const{auth}=useContext(AuthContext)
   const  {id}= useParams()
-  const current=data.find(x=>x._id==id)
+  const current=data.find(x=>x._id===id)
 
 
     return      <section id="details">
@@ -27,8 +27,7 @@ import { AuthContext } from "../../context/AuthContext"
       </div>
       <div id="likes">Likes: <span id="likes-count">0</span></div>
       <div id="action-buttons">
-        <a href="" id="like-btn">Like</a>
-        {auth._id==current._ownerId
+        {auth._id===current._ownerId
          ? <>
          <Link to={"/Edit/"+current._id} id="edit-btn">Edit</Link>
          <Link to={"/Delete/"+current._id} id="delete-btn">Delete</Link>
