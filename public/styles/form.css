@@ -1,20 +1,32 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+:root {
+  --purple: #140034;
+  --white: #FFFADE;
+  --purple-2: #A579F3;
+  --purple-3: #B0A8B9;
+  --blue: #00A6C8;
+}
+
 .login-page {
   width: 360px;
   padding: 8% 0 0;
   margin: auto;
+  
 }
 .form {
-  background: #ffffff;
+  background: rgb(12,130,158);
+background: radial-gradient(circle, rgba(12,130,158,1) 0%, rgba(25,0,57,1) 65%);
   max-width: 460px;
+  min-height:400px;
   margin: auto;
   margin-top: 100px;
   padding: 45px;
   text-align: center;
-  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+  border-radius: 10px;
     color: black;
     box-shadow: 15px 15px rgba(0, 0, 0, .15);
+    margin: 3rem auto;
 }
 
 .form h2 {
@@ -22,12 +34,13 @@
   margin-bottom: 30px;
   font-size: 30px;
   font-style: italic;
+  color: var(--purple-3);
 }
 
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #fafafa;
+  background: var(--purple-2);
   width: 90%;
   height: 50px;
   border: 0;
@@ -36,36 +49,40 @@
   box-sizing: border-box;
   font-size: 14px;
   text-align: center;
+  border-radius: 10px;
 }
 .form textarea {
-  border: 1px solid rgb(206, 206, 206);
+  border: 1px solid var(--purple-3);
   width: 90%;
   max-width: 99%;
   min-width: 90%;
   min-height: 50px;
   margin-bottom: 10px;
-  background-color: rgb(242, 242, 242);
+  background-color: var(--purple-2);
 }
 .form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   outline: 0;
-  background: #CBF6FF;
+  background-color:var(--purple-3);
+  color:var(--purple);
   width: 50%;
   border: 0;
   padding: 15px;
-  color: black;
+  color:var(--purple);
   font-size: 14px;
   
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
+transition: all 300ms ease-in-out;
   cursor: pointer;
 }
 
 .form button:hover {
   transform: rotateX(15deg);
-  box-shadow: 0 15px 15px #7db9d7;
+  box-shadow: 0 0 15px 1px var(--purple-2);
+  color: var(--purple-2);
 }
 
 
@@ -87,10 +104,15 @@
 
 .form .message {
   margin: 15px 0 0;
-  color: black;
+  color: var(--purple-3);
   font-size: 17px;
 }
 .form .message a {
-  color: #4f4f50;
+  color: var(--purple-2);
+  text-decoration: none;
+  transition: all 300ms  ease;
+}
+.form .message a:hover{
+  text-shadow: 1px 1px 1px var(--blue), 0 0 1em var(--white), 0 0 0.2em var(--white);
   text-decoration: none;
 }
