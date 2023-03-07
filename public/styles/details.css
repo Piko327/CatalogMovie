@@ -10,8 +10,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: rgb(12,130,158);
-background: radial-gradient(circle, rgba(12,130,158,1) 0%, rgba(25,0,57,1) 100%);
+  background: rgb(12, 130, 158);
+  background: radial-gradient(circle, rgba(12, 130, 158, 1) 0%, rgba(25, 0, 57, 1) 100%);
   margin: 50px auto;
   min-height: 460px;
   max-width: 45%;
