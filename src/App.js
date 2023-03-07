@@ -18,9 +18,8 @@ const setInfo=(data)=>setData(data)
  <>
 
       <AuthContext.Provider value={{auth,setLogin}}>
-  < Header/>
+  <Header/>
   <DataContext.Provider value={{data,setInfo}}>
-    <main>
  <Routes>
     <Route path='/' element={ <Home/>}/>
     <Route path='/Dashboard' element={<Dashboard/>}/>
@@ -32,7 +31,6 @@ const setInfo=(data)=>setData(data)
     <Route path='Delete/:id' element={<Delete/>}/>
     <Route path='/Logout' element={<Logout/>}/>
  </Routes>
-    </main>
     </DataContext.Provider>
   <footer>
     <p>@MusicLibrary</p>

@@ -8,7 +8,7 @@ export const Card=(props)=>
     return <li className="card">
     <img src={props.value.imageUrl} alt="travis" />
     <p>
-      <strong>Singer/Band: </strong><span className="singer">{props.value.singer}</span>
+      <strong>Singer/Band:</strong><span className="singer">{props.value.singer}</span>
     </p>
     <p>
       <strong>Album name: </strong><span className="album">{props.value.album}</span>

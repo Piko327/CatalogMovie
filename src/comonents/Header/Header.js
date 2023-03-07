@@ -11,7 +11,6 @@ const Header =()=>{
 }
 
     return  <header>
-    <a id="logo" href="/"><img id="logo-img" src="./images/logo.png" alt="" /></a>
     <nav>
     <div>
   <Link to="/Dashboard">Dashboard</Link>

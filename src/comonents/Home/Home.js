@@ -1,10 +1,12 @@
  const Home =()=>
 {
     return   <section id="home">
-    <img src="./images/landing.png" alt="home" />
+    <img className="home_img" src="https://assets.telegraphindia.com/telegraph/77d70c6f-b19a-497e-b1ed-bc4d0ae2722b.jpg" alt="home" />
 
-    <h2 id="landing-text"><span>Add your favourite albums</span> <strong>||</strong>
-     <span>Discover new ones right here!</span></h2>
+  <h1>MUSIC LiBARY</h1>
+  <p>If you wanna save your own albums somewhere
+  you are in a right place.
+  </p>
   </section>
 }
 
