@@ -1,21 +1,28 @@
 import { Link ,useNavigate} from "react-router-dom"
 import { login } from "../../api/userApi"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { AuthContext } from "../../context/AuthContext"
  const Login=()=>
 {
  const navigate= useNavigate()
  const {setLogin,auth} =useContext(AuthContext)
-   const onSubmitHandler=(e)=>
+ const [value, setValue] = useState({});
+   
+const  ChangeHandler=(e)=>
+{
+  setValue(state=>({
+    ...state,
+    [e.target.name]:e.target.value
+  }))
+}
+ 
+ const onSubmitHandler=(e)=>
    {
-    
     e.preventDefault()
-    let data=Object.fromEntries(new FormData(e.target)) 
-     login(data).then(resp=>{
+     login(value).then(resp=>{
     if(resp.email)
     {
       setLogin(resp)
-      
       navigate("/")
     }
     else
@@ -23,7 +30,7 @@ import { AuthContext } from "../../context/AuthContext"
       alert("go register ashole")
     }
       
-    })
+   })
     
 
 
@@ -33,8 +40,8 @@ import { AuthContext } from "../../context/AuthContext"
     <div className="form">
       <h2>Login</h2>
       <form className="login-form" onSubmit={onSubmitHandler}>
-        <input type="text" name="email" id="email" placeholder="email" />
-        <input type="password" name="password" id="password" placeholder="password" />
+        <input type="text" name="email" id="email" placeholder="email" value={value.email}  onChange={ChangeHandler}/>
+        <input type="password" name="password" id="password" placeholder="password"   value={value.password}  onChange={ChangeHandler}/>
         <button type="submit">login</button>
         <p className="message">
           Not registered? <Link to="/Register">Create an account</Link>
