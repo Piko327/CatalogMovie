@@ -10,8 +10,8 @@ function App() {
 const [auth,setAuth] = useLocalStorage('auth',{})
 const [data,setData]= useState({})
 
-const setLogin=(userData)=>setAuth(userData)
-const setInfo=(data)=>setData(data)
+const setLogin=(userData)=> setAuth(userData)
+const setInfo=(data)=> setData(data)
 
 
   return (
