@@ -6,7 +6,10 @@ import { AuthContext } from "../../context/AuthContext"
 {
  const navigate= useNavigate()
  const {setLogin,auth} =useContext(AuthContext)
- const [value, setValue] = useState({});
+ const [value, setValue] = useState({
+  email:"",
+  password:"",
+ });
    
 const  ChangeHandler=(e)=>
 {
@@ -18,7 +21,7 @@ const  ChangeHandler=(e)=>
  
  const onSubmitHandler=(e)=>
    {
-    e.preventDefault()
+e.preventDefault()
      login(value).then(resp=>{
     if(resp.email)
     {
@@ -29,10 +32,8 @@ const  ChangeHandler=(e)=>
     {//TO DO
       alert("go register ashole")
     }
-      
-   })
-    
-
+   }   
+   )
 
    }
 
@@ -42,7 +43,7 @@ const  ChangeHandler=(e)=>
       <form className="login-form" onSubmit={onSubmitHandler}>
         <input type="text" name="email" id="email" placeholder="email" value={value.email}  onChange={ChangeHandler}/>
         <input type="password" name="password" id="password" placeholder="password"   value={value.password}  onChange={ChangeHandler}/>
-        <button type="submit">login</button>
+        <button type="submit" >login</button>
         <p className="message">
           Not registered? <Link to="/Register">Create an account</Link>
         </p>
