@@ -2,7 +2,6 @@
   --bluAll: #00A6C8;
   --purple: #140034;
   --white: #FFFADE;
-  --purple-2: #A579F3;
   --purple-3: #B0A8B9;
 }
 
@@ -10,6 +9,7 @@
 #dashboard {
   margin-top: 1rem;
   display: block;
+  min-height: 74vh;
 }
 
 h2 {
