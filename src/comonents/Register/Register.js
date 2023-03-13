@@ -5,6 +5,7 @@ import { AuthContext } from "../../context/AuthContext"
 import { useContext, nothing,useState } from "react"
  const Register =()=>
 {
+
 const {setLogin,auth} =useContext(AuthContext)
 const [error, setError] = useState({ email:"",password: "",});
 const navigate =useNavigate()
@@ -18,7 +19,7 @@ const [value, setValue] = useState({
  {
      let message=""
     if (value.password.length < 8) {
-      message="Password should be at least 8 characters long";
+      message="Password should be at least 8 characters long"
       setError((state) => ({
         ...state,
         password:message,
@@ -26,13 +27,19 @@ const [value, setValue] = useState({
     }
     // Password should contain at least one uppercase letter
     if (!/[A-Z]/.test(value.password)) {
-      message="Password should contain at least one uppercase letter";
+      message="Password should contain at least one uppercase letter"
+      setError((error) => ({
+        ...error,
+        password:message
+        }))
+    }
+    if (!/\d/.test(value.password)) {
+      message="Password should contain at least one digit"
       setError((state) => ({
         ...state,
         password:message,
         }))
     }
-  
     // Password should contain at least one lowercase letter
     if (!/[a-z]/.test(value.password)) {
      message=("Password should contain at least one lowercase letter")
@@ -41,23 +48,12 @@ const [value, setValue] = useState({
       password:message,
       }))
     }
-  
-    // Password should contain at least one digit
-    if (!/\d/.test(value.password)) {
-      message="Password should contain at least one digit";
-      setError((state) => ({
-        ...state,
-        password:message,
-        }))
-    }
   if(message==="")
-    {
-      message=""
+   {
       setError((state) => ({
         ...state,
-        password:message,
-        }))
-    }
+        password:message}))} 
+     
   };  
   const validateEmail=()=>{
  
@@ -90,17 +86,38 @@ const  onSubmitHndler=(e)=>
   
 if(value.password===value.repassword)
 {
+  setError((state) => ({
+    ...state,
+    password:"",
+    }))
+
   let data={
     email:value.email,
     password:value.password}
     
 register(data).then(resp=> {
-    setLogin(resp)
-    navigate("/")
+ if(resp.message)
+ {
+  setError((state) => ({
+    ...state,
+    password:resp.message,
+    }))
+ }else if(resp.email)
+ {setLogin(resp)
+
+navigate("/")
+
+ }
   })
+}else
+{
+  setError((state) => ({
+    ...state,
+    password:"passwords must be same",
+    }))
 }
-else
-{}
+
+
     }
     return  <section id="register">
     <div className="form">
@@ -110,14 +127,13 @@ else
         {value.email ?
          <div>{error.email}</div>
          :nothing}
-        <input type="password" name="password" id="register-password" placeholder="password"   value={value.password}  onChange={ChangeHandler}/>
+        <input type="password" name="password" id="register-password" placeholder="password"   value={value.password}  onChange={ChangeHandler}  onBlur={CheckPassword}/>
         <input type="password" name="repassword" id="repeat-password" placeholder="repeat password"  value={value.repassword}  onChange={ChangeHandler} 
-          onBlur={CheckPassword}
         />
         {value.password ?
          <div>{error.password}</div>
          :nothing}
-        <button type="submit">register</button>
+        <button type="submit" disabled={!Object.entries(error).some(x=>x)} >register</button>
         <p className="message">Already registered? <Link to="/Login">Login</Link></p>
       </form>
     </div>

@@ -7,7 +7,7 @@ import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
-  const {setLogin} = useContext(AuthContext);
+  const {setLogin,auth} = useContext(AuthContext);
   const [value, setValue] = useState({ email: "",password: "",});
   const [error, setError] = useState("");
   
@@ -24,9 +24,11 @@ const Login = () => {
     login(value).then((resp) => {
       if (resp.email) {
         setLogin(resp);
-        navigate("/");}
+        navigate("/")
+        console.log(auth);}
       else
       { setError(resp.message)}})}
+
   return (
     <section id="login">
       <div className="form">

@@ -1,14 +1,17 @@
 
 import { useEffect, useContext } from 'react';
 import { getAll } from "../../api/dataApi";
+import { AuthContext } from '../../context/AuthContext';
 import { DataContext } from '../../context/DataContext';
 import { Card  } from "./Card";
 const Dashboard =()=>
 {
-  
+
+
 const isEmpty=(obj) =>Object.keys(obj).length===0;
  const {data,setInfo} = useContext(DataContext)
 
+ 
   useEffect(() => {
     getAll()
       .then(data =>setInfo(data))
