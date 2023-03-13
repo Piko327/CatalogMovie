@@ -1,17 +1,19 @@
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../api/userApi";
-import { useContext, useState } from "react";
+import { useContext, useState} from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { CheckPassword } from "../Utils/util.validate";
+
+
 
 const Login = () => {
   const navigate = useNavigate();
-  const { setLogin, auth } = useContext(AuthContext);
+  const {setLogin} = useContext(AuthContext);
   const [value, setValue] = useState({ email: "",password: "",});
-
+  const [error, setError] = useState("");
   
- const ChangeHandler=(e) => {
-    setValue((state) => ({
+
+        const ChangeHandler=(e) => {
+  setValue((state) => ({
       ...state,
       [e.target.name]: e.target.value,
       }));};
@@ -19,15 +21,12 @@ const Login = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-
     login(value).then((resp) => {
       if (resp.email) {
         setLogin(resp);
-        navigate("/");
-      } else {
-     
-      }
-    });}
+        navigate("/");}
+      else
+      { setError(resp.message)}})}
   return (
     <section id="login">
       <div className="form">
@@ -40,17 +39,16 @@ const Login = () => {
             placeholder="email"
             value={value.email}
             onChange={ChangeHandler}/>
-            
+        
          <input
             type="password"
             name="password"
             id="password"
             placeholder="password"
             value={value.password}
-            onChange={ChangeHandler}
-          />
-          <p>{CheckPassword(value.password)}</p>
+            onChange={ChangeHandler}/>
           <button type="submit" >login</button>
+          {error && <div className="errorMessage">{error}</div>}
           <p className="message">
             Not registered? <Link to="/Register">Create an account</Link>
           </p>
