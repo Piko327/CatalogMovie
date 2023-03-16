@@ -2,7 +2,6 @@ import { Add } from "../../api/dataApi";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { CheckPassword } from "../Utils/util.validate";
 const Create = () => {
   const { auth } = useContext(AuthContext);
   const token = auth.accessToken;
@@ -26,7 +25,7 @@ const Create = () => {
   const SubmitHandler = (e) => {
     e.preventDefault();
     const { singer, album, imageUrl, release, label, sales } = value;
-
+    
     Add(token, { singer, album, imageUrl, release, label, sales });
     navigate("/Dashboard");
   };
@@ -82,9 +81,9 @@ const Create = () => {
             id="album-sales"
             placeholder="Sales"
             value={value.sales}
-            onChange={ChangeHandler}
-          />
-          <button type="submit" disabled={!Object.values(value).some((x) => x)}>
+            onChange={ChangeHandler}/>
+         {!Object.values(value).every((x)=>x!=="") && <div> input should be filled</div>}
+          <button type="submit" disabled={!Object.values(value).every((x)=>x!=="")}>
             post
           </button>
         </form>

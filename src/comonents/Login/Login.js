@@ -7,7 +7,7 @@ import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
-  const {setLogin,auth} = useContext(AuthContext);
+  const {setLogin} = useContext(AuthContext);
   const [value, setValue] = useState({ email: "",password: "",});
   const [error, setError] = useState("");
   
@@ -25,7 +25,7 @@ const Login = () => {
       if (resp.email) {
         setLogin(resp);
         navigate("/")
-        console.log(auth);}
+      }
       else
       { setError(resp.message)}})}
 
