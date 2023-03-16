@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "coverage":"yarn test --coverage"
+    "coverage": "react-scripts test --env=jsdom --watchAll=false --coverage  --collectCoverageFrom='!src/context/**.js'  --collectCoverageFrom='!src/comonents/index.js' "
   },
   "eslintConfig": {
     "extends": [
@@ -36,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
   }
 }
