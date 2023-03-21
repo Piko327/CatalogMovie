@@ -6,8 +6,8 @@ import { useContext, nothing,useState } from "react"
  const Register =()=>
 {
 
-const {setLogin,auth} =useContext(AuthContext)
-const [error, setError] = useState({ email:"",password: "",});
+const {setLogin} =useContext(AuthContext)
+const [error, setError] = useState({ email:"",password:"",});
 const navigate =useNavigate()
 const [value, setValue] = useState({
   email:"",
@@ -79,7 +79,7 @@ const  ChangeHandler=(e)=>
   }))
 }
  
-const  onSubmitHndler=(e)=>
+const  onSubmtHndler=(e)=>
  { 
   e.preventDefault()
 
@@ -122,7 +122,7 @@ navigate("/")
     return  <section id="register">
     <div className="form">
       <h2>Register</h2>
-      <form className="login-form" onSubmit={onSubmitHndler}>
+      <form className="login-form" onSubmit={onSubmtHndler}>
         <input type="text" name="email" id="register-email" placeholder="email"   value={value.email}  onChange={ChangeHandler}     onBlur={validateEmail} />
         {value.email ?
          <div>{error.email}</div>

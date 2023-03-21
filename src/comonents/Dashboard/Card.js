@@ -4,7 +4,6 @@ export const Card=(props)=>
 {
    const url=`/Details/${props.value._id}` 
 
-
     return <li className="card">
     <img src={props.value.imageUrl} alt="travis" />
     <p>

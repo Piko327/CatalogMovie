@@ -8,7 +8,7 @@ import { useLocalStorage } from './Hooks/useLocalStorage';
 import { DataContext } from './context/DataContext';
 function App() {
 const [auth,setAuth] = useLocalStorage('auth',{})
-const [data,setData]= useState({})
+const [data,setData]= useState([])
 
 const setLogin=(userData)=> setAuth(userData)
 const setInfo=(data)=> setData(data)
@@ -36,7 +36,6 @@ const setInfo=(data)=> setData(data)
     <p>@MusicLibrary</p>
   </footer>
      </AuthContext.Provider>
-
 </>
   );
 

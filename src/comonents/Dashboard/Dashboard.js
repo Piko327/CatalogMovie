@@ -13,13 +13,13 @@ const isEmpty=(obj) =>Object.keys(obj).length===0;
 
   useEffect(() => {
     getAll()
-      .then(data =>setInfo(data))
+      .then(data =>setInfo( data)).then()
       ;}, []);
     return <section id="dashboard">
    {!isEmpty(data)?
     <> 
     <h2>ALBUMS</h2>
-    <ul className="card-wrapper">
+    <ul ul className="card-wrapper">
      {data.map((x)=><Card  key={x._id}  value={x}/>)}
     </ul>
     </>

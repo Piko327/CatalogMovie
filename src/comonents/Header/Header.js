@@ -1,48 +1,47 @@
-import { Link } from "react-router-dom"
-import { useContext, useState } from "react"
-import { AuthContext } from "../../context/AuthContext"
+import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
-const Header =()=>{
-    
-  const {auth} =useContext(AuthContext)
-
-  //du=inamic
-  const [visible, setVisible] = useState(true);
-
-  const dynamicNavbar = (e) => {
-    if (e.pageX<=935 && visible === true)
-    setVisible(false) 
-     else 
-     setVisible(true);
-  };
-
+const Header = () => {
+  const { auth } = useContext(AuthContext);
+  // const [visible, setVisible] = useState(false);
   function isEmpty(obj) {
     return Object.keys(obj).length === 0;
-}
-    return <div className={visible ? "closed":"opened"} >
-     <header className={visible ?"header_nav active":"header_nav " }>
-    <nav>
-  <button className="material-symbols-outlined"  onClick={dynamicNavbar}>
-         {visible ? "menu":"close"}</button>
-    <div>
-  <Link to="/Dashboard">Dashboard</Link>
-</div>
-{isEmpty(auth)
-?   
-<div className="guest">
-        <Link to="/Login">Login</Link>
-        <Link to="/Register">Register</Link>
-      </div>
-:
-<div className="user">
-<Link to="/Create">Add Album</Link>
-<Link to="/Logout">Logout</Link>
-</div>
-}
-    </nav>
-  </header>
-</div>
-    
-}
+  }
 
-export default Header
+  return (
+    <>
+      <div className="">
+        <header className="">
+          <button>react bt</button>
+          <ul value={true}>
+            <li>
+              <Link to="/Dashboard" className="decoration-slice">Dashboard</Link>
+            </li>
+            {isEmpty(auth) ? (
+              <>
+                <li>
+                  <Link to="/Login" className="">Login </Link>
+                </li>
+                <li>
+                  <Link to="/Register">Register</Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to="/Create">Add Album</Link>
+                </li>
+                <li>
+                  <Link to="/Logout">Logout</Link>
+                </li>
+           </>
+            )}
+          </ul>
+        </header>
+      </div>
+    </>
+  );
+};
+
+export default Header;
