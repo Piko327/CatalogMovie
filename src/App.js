@@ -1,5 +1,5 @@
 
-import './App.css';
+
 import { Create ,Dashboard,Delete,Details,Edit,Header,Home,Logout,Login,Register } from './comonents';
 import { Route, Routes } from 'react-router-dom';
 import { AuthContext } from './context/AuthContext';

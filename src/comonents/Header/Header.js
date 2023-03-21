@@ -11,12 +11,11 @@ const Header = () => {
 
   return (
     <>
-      <div className="">
-        <header className="">
+     <header className="bg-">
           <button>react bt</button>
           <ul value={true}>
             <li>
-              <Link to="/Dashboard" className="decoration-slice">Dashboard</Link>
+              <Link to="/Dashboard" className="">Dashboard</Link>
             </li>
             {isEmpty(auth) ? (
               <>
@@ -39,7 +38,6 @@ const Header = () => {
             )}
           </ul>
         </header>
-      </div>
     </>
   );
 };
