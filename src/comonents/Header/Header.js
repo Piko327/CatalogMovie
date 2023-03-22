@@ -34,11 +34,12 @@ const Header = () => {
             </>
           ) : (
             <>
-              <li className="p-4 pl-20 truncate " >
-                <Link className="" to="/Create">Add Album</Link>
+              <li className="p-4 px-20 truncate " >
+                <Link onClick={handlerNav} className="" to="/Create" >Add Album</Link>
               </li>
-              <li className="p-4 pl-20">
-                <Link to="/Logout">Logout</Link>
+              <li className="mt-4" >
+                <Link onClick={handlerNav} 
+                className='px-5 pb-1 text-black text-bold bg-rose-700 rounded border-l-rose-700' to="/Logout">Logout</Link>
               </li>
             </>
           )}
@@ -64,25 +65,25 @@ const Header = () => {
           </h1>
           <ul className="pt-12 uppercase">
             <li className="p-5 border-b border-b-gray-800">
-              <Link to="/Dashboard">Dashboard</Link>
+              <Link onClick={handlerNav} to="/Dashboard">Dashboard</Link>
             </li>
 
             {isEmpty(auth) ? (
               <>
                 <li className="p-5 border-b border-b-gray-800">
-                  <Link to="/Login">Login </Link>
+                  <Link onClick={handlerNav} to="/Login">Login </Link>
                 </li>
                 <li className="p-5 border-b border-b-gray-800">
-                  <Link to="/Register">Register</Link>
+                  <Link onClick={handlerNav} to="/Register">Register</Link>
                 </li>
               </>
             ) : (
               <>
                 <li className="p-5 border-b border-b-gray-800">
-                  <Link to="/Create">Add Album</Link>
+                  <Link onClick={handlerNav} to="/Create">Add Album</Link>
                 </li>
                 <li className="p-5 border-b border-b-gray-800">
-                  <Link to="/Logout">Logout</Link>
+                  <Link onClick={handlerNav} to="/Logout">Logout</Link>
                 </li>
               </>
             )}
