@@ -17,6 +17,12 @@ import { AuthContext } from "../../context/AuthContext"
         <img src={current.imageUrl} alt="example1" />
       </div>
       <div id="info-wrapper">
+       <p className="text-center p-3">
+      <strong >Singer/Band:</strong><span >{current.singer}</span>
+    </p>
+    <p className="text-center p-3">
+      <strong  >Album name: </strong><span className='text-white'>{current.album}</span>
+    </p>
         <p><strong>Band:</strong><span id="details-singer">{current.singer}</span></p>
         <p>
           <strong>Album name:</strong><span id="details-album">{current.album}</span>

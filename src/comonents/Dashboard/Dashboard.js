@@ -15,11 +15,11 @@ const isEmpty=(obj) =>Object.keys(obj).length===0;
     getAll()
       .then(data =>setInfo( data)).then()
       ;}, []);
-    return <section id="dashboard">
+    return <section className='min-h-[80vh] bg-white ' >
    {!isEmpty(data)?
     <> 
-    <h2>ALBUMS</h2>
-    <ul ul className="card-wrapper">
+    <h2 className='pt-10 font-sans font-bold text-center text-3xl'>ALBUMS</h2>
+    <ul ul className=" mt-10 flex justify-center items-center	 flex-wrap">
      {data.map((x)=><Card  key={x._id}  value={x}/>)}
     </ul>
     </>
