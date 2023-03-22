@@ -6,14 +6,14 @@ import { AiOutlineClose } from "react-icons/ai";
 
 const Header = () => {
   const { auth } = useContext(AuthContext);
-  const [nav, setnav] = useState(false);
+  const [nav, setnav] = useState(true);
   const isEmpty = (obj) => Object.keys(obj).length === 0;
 
   const handlerNav = () => {setnav((nav) => !nav)}
   return (
     <>        {/*  NAV */}
       <header className=" px-4 h-24 text-white flex justify-between mx-auto max-w-[1240px] items-center ">
-        <h1 className="w-full text-3xl font-bold text-[#ed1245]">REACT.</h1>
+        <Link to="/" className="w-full text-3xl font-bold text-[#ed1245]">REACT.</Link>
         <ul className=" text-white hidden md:flex font-500 text-2xl">
           <li className="p-4 pl-20">
             <Link to="/Dashboard" className="">
@@ -34,8 +34,8 @@ const Header = () => {
             </>
           ) : (
             <>
-              <li className="p-4 pl-20">
-                <Link to="/Create">Add Album</Link>
+              <li className="p-4 pl-20 truncate " >
+                <Link className="" to="/Create">Add Album</Link>
               </li>
               <li className="p-4 pl-20">
                 <Link to="/Logout">Logout</Link>
@@ -55,8 +55,8 @@ const Header = () => {
         <div
           className={
             !nav
-              ? "bg-[#000800] md:hidden h-full fixed left-0 top-0 w-[60%] ease-in-out duration-500 "
-              : "fixed left-[-100%]"
+              ? "bg-[#000800] md:hidden h-full fixed  z-40 left-0 top-0 w-[60%] ease-in-out duration-500 "
+              : "fixed left-[-100%] "
           }
         >
           <h1 className="w-full text-3xl font-bold text-[#ed1245] p-[20px] pb-0">
