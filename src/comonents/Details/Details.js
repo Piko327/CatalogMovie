@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom";
 import { useContext } from "react"
 import { DataContext } from "../../context/DataContext"
 import { AuthContext } from "../../context/AuthContext"
@@ -23,12 +23,22 @@ import { AuthContext } from "../../context/AuthContext"
         <p className="flex justify-right"><strong className='text-primary'>Label:</strong><span className='text-rose-200 pl-1 italic font-medium' id="details-label">{current.label}</span></p>
         <p className="flex justify-right"><strong className='text-primary'>Sales:</strong><span className='text-rose-200 pl-1 italic font-medium' id="details-sales">{current.sales}</span></p>
         <div className="m-4 lg:mt-10  my-6 text-center">
-        {auth._id===current._ownerId
-         ? <>
-         <Link to={"/Edit/"+current._id} className='mt-5 border-[0.5px] border-black  italic font-mono rounded-full capitalize px-6 m-1 py-2 text-bold bg-rose-200 hover:bg-primary hover:text-rose-200 duration-500 ease-in-out  hover:border-rose-700 ' >Edit</Link>
-         <Link to={"/Delete/"+current._id} className='mt-5 border-[0.5px] border-black  italic font-mono rounded-full capitalize px-4  m-1 py-2 text-bold bg-rose-200   hover:bg-primary hover:text-rose-200 duration-500 ease-in-out hover:border-rose-700 ' >Delete</Link>
-            </>
-         :  null}
+        {auth._id === current._ownerId && (
+  <>
+    <Link
+      to={"/Edit/" + current._id}
+      className="mt-5 border-[0.5px] border-black italic font-mono rounded-full capitalize px-6 m-1 py-2 text-bold bg-rose-200 hover:bg-primary hover:text-rose-200 duration-500 ease-in-out hover:border-rose-700"
+    >
+      Edit
+    </Link>
+    <Link
+      to={"/Delete/" + current._id}
+      className="mt-5 border-[0.5px] border-black italic font-mono rounded-full capitalize px-4 m-1 py-2 text-bold bg-rose-200 hover:bg-primary hover:text-rose-200 duration-500 ease-in-out hover:border-rose-700"
+    >
+      Delete
+    </Link>
+  </>
+)}
       </div>
       </div>
     

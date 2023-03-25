@@ -6,21 +6,25 @@ import { AiOutlineClose } from "react-icons/ai";
 
 const Header = () => {
   const { auth } = useContext(AuthContext);
-  const [nav, setnav] = useState(true);
+  const [nav, setNav] = useState(true);
   const isEmpty = (obj) => Object.keys(obj).length === 0;
 
-  const handlerNav = () => {setnav((nav) => !nav)}
+  const handlerNav = () => {
+    setNav((nav) => !nav);
+  };
   return (
-    <>        {/*  NAV */}
+    <>
+      {/*  NAV */}
       <header className=" px-4 h-24 text-white flex justify-between mx-auto max-w-[1240px] items-center ">
-        <Link to="/" className="w-full text-3xl font-bold text-rose-700">REACT.</Link>
+        <Link to="/" className="w-full text-3xl font-bold text-rose-700">
+          REACT.
+        </Link>
         <ul className=" text-white hidden md:flex font-500 text-[25px] font-">
           <li className="p-4 pl-20">
             <Link to="/Dashboard" className="">
               Dashboard
             </Link>
           </li>
-
           {isEmpty(auth) ? (
             <>
               <li className="p-4 pl-20">
@@ -34,17 +38,24 @@ const Header = () => {
             </>
           ) : (
             <>
-              <li className="p-4 px-20 truncate " >
-                <Link onClick={handlerNav} className="" to="/Create" >Add Album</Link>
+              <li className="p-4 px-20 truncate ">
+                <Link onClick={handlerNav} className="" to="/Create">
+                  Add Album
+                </Link>
               </li>
-              <li className="mt-4" >
-                <Link onClick={handlerNav} 
-                className='px-5 pb-1 text-black text-bold bg-rose-700 rounded border-l-rose-700 hover:text-rose-700 hover:bg-white ease-in-out duration-300' to="/Logout">Logout</Link>
+              <li className="mt-4">
+                <Link
+                  onClick={handlerNav}
+                  className="px-5 pb-1 text-black text-bold bg-rose-700 rounded border-l-rose-700 hover:text-rose-700 hover:bg-white ease-in-out duration-300"
+                  to="/Logout"
+                >
+                  Logout
+                </Link>
               </li>
             </>
           )}
         </ul>
-        <div onClick={handlerNav} className='md:hidden'>
+        <div onClick={handlerNav} className="md:hidden">
           {nav ? (
             <FiMenu className="text-2xl hover:text-3xl text-white  ease-out duration-300" />
           ) : (
@@ -65,25 +76,35 @@ const Header = () => {
           </h1>
           <ul className="pt-12 text-white uppercase italic">
             <li className="p-5 border-b border-b-gray-800  hover:text-rose-700 ease-in-out duration-300 hover:font-semibold trasition:transform">
-              <Link onClick={handlerNav} to="/Dashboard">Dashboard</Link>
+              <Link onClick={handlerNav} to="/Dashboard">
+                Dashboard
+              </Link>
             </li>
 
             {isEmpty(auth) ? (
               <>
                 <li className="p-5 border-b border-b-gray-800  hover:text-rose-700 ease-in-out duration-300 hover:font-semibold trasition:transform">
-                  <Link onClick={handlerNav} to="/Login">Login </Link>
+                  <Link onClick={handlerNav} to="/Login">
+                    Login{" "}
+                  </Link>
                 </li>
                 <li className="p-5 border-b border-b-gray-800  hover:text-rose-700 ease-in-out duration-300 hover:font-semibold trasition:transform">
-                  <Link onClick={handlerNav} to="/Register">Register</Link>
+                  <Link onClick={handlerNav} to="/Register">
+                    Register
+                  </Link>
                 </li>
               </>
             ) : (
               <>
                 <li className="p-5 border-b border-b-gray-800  hover:text-rose-700 ease-in-out duration-300 hover:font-semibold trasition:transform">
-                  <Link onClick={handlerNav} to="/Create">Add Album</Link>
+                  <Link onClick={handlerNav} to="/Create">
+                    Add Album
+                  </Link>
                 </li>
                 <li className="p-5 border-b border-b-gray-800  hover:text-rose-700 ease-in-out  duration-300 hover:font-semibold trasition:transform">
-                  <Link onClick={handlerNav} to="/Logout">Logout</Link>
+                  <Link onClick={handlerNav} to="/Logout">
+                    Logout
+                  </Link>
                 </li>
               </>
             )}
