@@ -119,10 +119,10 @@ navigate("/")
 
 
     }
-    return  <section id="register">
-    <div className="form">
-      <h2>Register</h2>
-      <form className="login-form" onSubmit={onSubmtHndler}>
+    return  <section className='bg-white px-[20vw] py-[10vh] min-h-[90vh] '>
+     <div className='w-[60vw] bg-rose-700 border-2 border-rose-900 rounded-3xl'>
+      <h2 className='text-2xl text-rose-100 italic my-10 font-bold text-center' >Register</h2>
+      <form className='flex flex-col items-center  w-full' onSubmit={onSubmtHndler}>
         <input type="text" name="email" id="register-email" placeholder="email"   value={value.email}  onChange={ChangeHandler}     onBlur={validateEmail} />
         {value.email ?
          <div>{error.email}</div>
@@ -133,7 +133,9 @@ navigate("/")
         {value.password ?
          <div>{error.password}</div>
          :nothing}
-        <button type="submit" disabled={!Object.entries(error).some(x=>x)} >register</button>
+        <button type="submit"
+         className="mt-5 border-[0.5px] enabled:mb-7 trxt-primary border-rose-900 italic text-semibold rounded-full capitalize px-6 m-1 py-1 text-bold bg-rose-200 enabled:hover:bg-primary enabled:hover:text-rose-200 duration-500 ease-in-out enabled:hover:border-rose-700"
+         disabled={!Object.entries(error).some(x=>x)} >register</button>
         <p className="message">Already registered? <Link to="/Login">Login</Link></p>
       </form>
     </div>

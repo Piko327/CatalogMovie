@@ -16,7 +16,7 @@ const Header = () => {
     <>
       {/*  NAV */}
       <header className=" px-4 h-24 text-white flex justify-between mx-auto max-w-[1240px] items-center ">
-        <Link to="/" className="w-full text-3xl font-bold text-rose-700">
+        <Link to="/" className=" text-3xl font-bold text-rose-700 transition-transform hover:scale-105">
           REACT.
         </Link>
         <ul className=" text-white hidden md:flex font-500 text-[25px] font-">
