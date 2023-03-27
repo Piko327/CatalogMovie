@@ -93,7 +93,7 @@ const Create = () => {
           type="submit" disabled={!Object.values(value).every((x)=>x!=="")}>
             post
           </button>
-          {!Object.values(value).every((x)=>x!=="") && <div className='text-red-900 font-bold bg-white rounded m-1 block py-1 px-9'>All fields must be filled.</div>}
+          {!Object.values(value).every((x)=>x!=="") && <div className='text-red-900 font-bold bg-white rounded m-4 block py-1 px-2 md:px-9 '>All fields must be filled.</div>}
         </form>
         </div>
     </section>
