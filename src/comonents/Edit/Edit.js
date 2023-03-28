@@ -25,7 +25,7 @@ navigate("/Dashboard")
 }
 
 
-    return    <section className='bg-white px-[20vw] py-[10vh] min-h-[90vh]' >
+    return    <section className='bg-white px-[20vw] py-[10vh] min-h-[80vh]' >
      <div className='w-[60vw] bg-rose-700 border-2 border-rose-900 rounded-3xl'>
       <h2 className=' text-2xl text-rose-100 italic my-10 font-bold text-center'>Edit Album</h2>
       <form className="flex flex-col items-center  w-full" onSubmit={SubmitHandler}>

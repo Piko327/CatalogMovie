@@ -30,10 +30,11 @@ const setInfo=(data)=> setData(data)
     <Route path='/Edit/:id' element={<Edit/>}/>
     <Route path='Delete/:id' element={<Delete/>}/>
     <Route path='/Logout' element={<Logout/>}/>
+    <Route path='/*' element={<Home/>}/>
  </Routes>
     </DataContext.Provider>
   <footer>
-    <p>@MusicLibrary</p>
+    <p className='text-rose-100 text-3xl  text-center m-3'>@MusicLibrary</p>
   </footer>
      </AuthContext.Provider>
 </>

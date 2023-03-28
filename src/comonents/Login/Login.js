@@ -29,7 +29,7 @@ const Login = () => {
   };
 
   return (
-    <section className="bg-white px-[20vw] py-[10vh] min-h-[90vh] ">
+    <section className="bg-white px-[20vw] py-[10vh] min-h-[80vh] ">
       <div className="w-[60vw] bg-rose-700 border-2 border-rose-900 rounded-3xl">
         <h2 className="text-2xl text-rose-100 italic my-10 font-bold text-center">
           Login
@@ -63,10 +63,9 @@ const Login = () => {
           >
             login
           </button>
-
-          {error && <div className="errorMessage ">{error}</div>}
+          {error && <div className="">{error}</div>}
           <p className="text-rose-100 font-mono text-center mb-2 ">
-            Not registered? <Link className='text-primary  text-bold italic' to="/Register">Create an account</Link>
+            Not registered? <Link className='text-primary text-center text-bold italic' to="/Register">Create an account</Link>
           </p>
         </form>
       </div>

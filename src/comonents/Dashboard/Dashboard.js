@@ -18,7 +18,7 @@ const isEmpty=(obj) =>Object.keys(obj).length===0;
     return <section className='min-h-[80vh] bg-white ' >
    {!isEmpty(data)?
     <> 
-    <h2 className='pt-10 font-mono  italic font-bold text-center text-3xl'>ALBUMS</h2>
+    <h2 className='pt-10 italic text-rose-700  font-bold text-center text-3xl'>ALBUMS</h2>
     <ul ul className=" mt-10 flex justify-center items-center	 flex-wrap">
      {data.map((x)=><Card  key={x._id}  value={x}/>)}
     </ul>
