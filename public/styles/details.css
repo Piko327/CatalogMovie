@@ -1,14 +1,23 @@
+:root {
+  --purple: #140034;
+  --white: #FFFADE;
+  --purple-2: #A579F3;
+  --purple-3: #B0A8B9;
+  --blu: #00A6C8;
+}
+
 #details-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: white;
+  background: rgb(12, 130, 158);
+  background: radial-gradient(circle, rgba(12, 130, 158, 1) 0%, rgba(25, 0, 57, 1) 100%);
   margin: 50px auto;
-  min-height: 400px;
+  min-height: 460px;
   max-width: 45%;
   border: 2px ridge rgb(210, 208, 208);
-  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
-    box-shadow: 10px 10px rgba(0, 0, 0, .15);
+  border-radius: 20px;
+  box-shadow: 10px 10px rgba(0, 0, 0, .15);
 }
 
 #img-wrapper {
@@ -26,6 +35,7 @@
   font-weight: bold;
   font-size: 29px;
   width: 100%;
+  color: var(--purple-3);
 }
 
 #info-wrapper {
@@ -34,21 +44,23 @@
   width: 55%;
   margin-left: 70px;
   height: 250px;
+  margin-bottom: 3rem;
 }
 
-#info-wrapper > p {
+#info-wrapper>p {
   width: 90%;
   margin: 25px 0px 0px 0px;
   height: auto;
   text-align: center;
   font-weight: bold;
+  color: var(--purple-3);
 }
 
 #info-wrapper>p>strong {
   float: left;
 }
 
-#info-wrapper > p > span {
+#info-wrapper>p>span {
   float: right;
 }
 
@@ -65,13 +77,6 @@ span {
   font-size: 17px;
 }
 
-#likes{
-  width: 95%;
-  text-align: center;
-  margin: 35px 0px 20px 0px;
-  font-weight: bold;
-  font-size: 21px;
-}
 
 #action-buttons {
   display: flex;
@@ -88,13 +93,15 @@ span {
   width: 130px;
   padding: 10px;
   text-align: center;
-  color: black;
+  border-radius: 30px;
   font-weight: 500;
-  background: #CBF6FF;
-  
+  background-color: var(--purple-3);
+  color: var(--purple);
+  transition: all 300ms ease-in-out;
 }
 
 #action-buttons a:hover {
   transform: rotateX(15deg);
-  box-shadow: 0 15px 15px #7db9d7;
+  box-shadow: 0 0 15px 1px var(--blu);
+  color: var(--purple-2);
 }

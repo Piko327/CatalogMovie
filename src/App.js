@@ -4,7 +4,7 @@ import { Create ,Dashboard,Delete,Details,Edit,Header,Home,Logout,Login,Register
 import { Route, Routes } from 'react-router-dom';
 import { AuthContext, AuthProvider } from './context/AuthContext';
 import { useState } from 'react';
-import { Logout } from './comonents/Logout/Logout';
+
 import { useLocalStorage } from './Hooks/useLocalStorage';
 import { DataContext } from './context/DataContext';
 function App() {
@@ -16,10 +16,9 @@ const setInfo=(data)=>setData(data)
   return (
  <>
 
-     <AuthProvider>
+     <AuthContext.Provider value={}>
   < Header/>
   <DataContext.Provider value={{data,setInfo}}>
-    <main>
  <Routes>
     <Route path='/' element={ <Home/>}/>
     <Route path='/Dashboard' element={<Dashboard/>}/>
@@ -31,12 +30,12 @@ const setInfo=(data)=>setData(data)
     <Route path='Delete/:id' element={<Delete/>}/>
     <Route path='/Logout' element={<Logout/>}/>
  </Routes>
-    </main>
     </DataContext.Provider>
+    </AuthContext.Provider>
   <footer>
     <p>@MusicLibrary</p>
   </footer>
-  </AuthProvider>
+
 
 </>
   );

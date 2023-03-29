@@ -5,14 +5,14 @@ import { AddEdit } from "../../api/dataApi"
 import { AuthContext } from "../../context/AuthContext"
 import Details from "../Details/Details"
 
- const Edit =()=>
+ const Edit=()=>
 {
   const navigate= useNavigate()
  const{data}=useContext(DataContext)
  const {auth}= useContext(AuthContext)
  const token = auth.accessToken
 const  {id}= useParams()
-const current=data.find(x=>x._id==id)
+const current=data.find(x=>x._id===id)
 
  
 const SubmitHandler =(e)=>

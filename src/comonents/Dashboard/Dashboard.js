@@ -1,5 +1,5 @@
 
-import { useState,useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { getAll } from "../../api/dataApi";
 import { DataContext } from '../../context/DataContext';
 import { Card  } from "./Card";
@@ -17,13 +17,13 @@ const isEmpty =(obj) =>Object.keys(obj).length === 0;
   
     return <section id="dashboard">
    {data ?
-    <> <h2>Albums</h2>
+    <> <h2>ALBUMS</h2>
     <ul className="card-wrapper">
       
      {isEmpty(data)
      ? null
      :
-     data.map((x)=><Card key={x._id}  value={x}/>)}
+     data.map((x)=><Card  key={x._id}  value={x}/>)}
     
     </ul>
     </>

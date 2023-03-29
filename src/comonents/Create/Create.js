@@ -18,7 +18,8 @@ e.preventDefault()
  release,
  label,
  sales,
-}=Object.fromEntries(new FormData(e.target))
+}
+=Object.fromEntries(new FormData(e.target))
 
   Add(token,{
     singer,

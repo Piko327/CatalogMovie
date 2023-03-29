@@ -6,15 +6,15 @@ import { AuthContext } from "../../context/AuthContext"
  const Details =()=>{
   const{data}=useContext(DataContext)
   const{auth}=useContext(AuthContext)
-  const  {id}= useParams()
-  const current=data.find(x=>x._id==id)
+  const {id} = useParams()
+  const current=data.find(x=>x._id===id)
 
 
-    return      <section id="details">
+    return   <section id="details">
     <div id="details-wrapper">
       <p id="details-title">Album Details</p>
       <div id="img-wrapper">
-        <img src="./images/BackinBlack.jpeg" alt="example1" />
+        <img src={current.imageUrl} alt="example1" />
       </div>
       <div id="info-wrapper">
         <p><strong>Band:</strong><span id="details-singer">{current.singer}</span></p>
@@ -25,10 +25,8 @@ import { AuthContext } from "../../context/AuthContext"
         <p><strong>Label:</strong><span id="details-label">{current.label}</span></p>
         <p><strong>Sales:</strong><span id="details-sales">{current.sales}</span></p>
       </div>
-      <div id="likes">Likes: <span id="likes-count">0</span></div>
       <div id="action-buttons">
-        <a href="" id="like-btn">Like</a>
-        {auth._id==current._ownerId
+        {auth._id===current._ownerId
          ? <>
          <Link to={"/Edit/"+current._id} id="edit-btn">Edit</Link>
          <Link to={"/Delete/"+current._id} id="delete-btn">Delete</Link>
