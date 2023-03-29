@@ -5,8 +5,6 @@ import { DataContext } from '../../context/DataContext';
 import { Card  } from "./Card";
 const Dashboard =()=>
 {
-
-
 const isEmpty=(obj) =>Object.keys(obj).length===0;
  const {data,setInfo} = useContext(DataContext)
 
@@ -19,7 +17,7 @@ const isEmpty=(obj) =>Object.keys(obj).length===0;
    {!isEmpty(data)?
     <> 
     <h2 className='pt-10 italic text-rose-700  font-bold text-center text-3xl'>ALBUMS</h2>
-    <ul ul className=" mt-10 flex justify-center items-center	 flex-wrap">
+    <ul  className=" mt-10 flex justify-center items-center	 flex-wrap">
      {data.map((x)=><Card  key={x._id}  value={x}/>)}
     </ul>
     </>
