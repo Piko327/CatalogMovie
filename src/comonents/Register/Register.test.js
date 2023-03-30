@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react"
+import { findAllByText, fireEvent, render, screen } from "@testing-library/react"
 import { BrowserRouter } from "react-router-dom";
 import Register from "./Register";
 
@@ -16,17 +16,61 @@ test("Register render corectly", () => {
   expect(button).toBeInTheDocument()
   expect(button).toBeDisabled()
 });
+  
+test("Invalid email", async() => {
+  render(
+    <BrowserRouter>
+      <Register />
+    </BrowserRouter>
+  );
+  const emailInput = screen.getByPlaceholderText('email');
 
-// test("Register correctly",()=>
-// { 
-//     render(  
-//     <BrowserRouter>
-//       <Register />
-//     </BrowserRouter>);
-// const inputEmail=screen.getByPlaceholderText('email')
-// fireEvent.change(inputEmail, {target: {value: 'wrong'}});
-// const inputPass=screen.getByPlaceholderText('password')
-// fireEvent.change(inputPass, {target: {value: 'wrong'}});
+  fireEvent.change(emailInput, {target:{value:'dasdadf'}})
+
+  const error=await screen.findByRole("error")
+  const button= screen.getByRole("button")
+ expect(error).toBeInTheDocument()
+expect(button).toBeDisabled()
+
+ 
+})
+test("Invalid password", async() => {
+  render(
+    <BrowserRouter>
+      <Register />
+    </BrowserRouter>
+  );
+  const passwordInput=screen.getByPlaceholderText('password');
+  
+  fireEvent.change(passwordInput, {target:{value:'dasdadf'}})
+
+  const error=await screen.findByRole("error")
+  const button= screen.getByRole("button")
+ expect(error).toBeInTheDocument()
+expect(button).toBeDisabled()
 
 
-// })
+
+ 
+})
+
+test("succsesfuly register", async() => {
+  render(
+    <BrowserRouter>
+      <Register />
+    </BrowserRouter>
+  );
+  const repasswordInput=screen.getByPlaceholderText("repassword")
+  const passwordInput=screen.getByPlaceholderText('password');
+  const emailInput = screen.getByPlaceholderText('email');
+  const button= screen.getByRole("button")
+
+  fireEvent.change(emailInput, {target:{value:'asdfd@abv.bg'}})
+
+  fireEvent.change(passwordInput, {target:{value:'Asdfghj123!'}})
+
+  fireEvent.change(repasswordInput, {target:{value:'Asdfghj123!'}})
+
+  fireEvent.click(button)
+
+})

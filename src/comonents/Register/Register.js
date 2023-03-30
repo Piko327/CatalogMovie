@@ -135,7 +135,7 @@ const passChecker=()=>{
             onChange={ChangeHandler}
             onInput={validateEmail}
           />
-          {value.email ? <div className=''>{error.email}</div> : nothing}
+          {value.email?<div role={"error"}>{error.email}</div> : nothing}
           <input
             className=" block w-5/6 max- my-1 mx-3 rounded h-10 border-[1px] text-center border-rose-300"
             type="password"
@@ -149,14 +149,15 @@ const passChecker=()=>{
             className=" block w-5/6 max- my-1 mx-3 rounded h-10 border-[1px] text-center border-rose-300"
             type="password"
             name="repassword"
-            placeholder="password"
+            placeholder="repassword"
             value={value.repassword}
             onChange={ChangeHandler}
             onBlur={passChecker}
          
             />
-          {value.password ? <div>{error.password}</div> : nothing}
+          {value.password ? <div role={"error"} >{error.password}</div>:nothing}
           <button
+          name='registerBtn'
             type="submit"
             className="mt-5 border-[0.5px] enabled:mb-7 trxt-primary border-rose-900 italic text-semibold rounded-full capitalize px-6 m-1 py-1 text-bold bg-rose-200 enabled:hover:bg-primary enabled:hover:text-rose-200 duration-500 ease-in-out enabled:hover:border-rose-700"
             disabled={ !(Object.values(error).every(x=>x==="") && Object.values(value).every(x=>x!==""))}
