@@ -18,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "coverage": "react-scripts test --env=jsdom --watchAll=false --coverage  --collectCoverageFrom='!src/context/**.js'  --collectCoverageFrom='!src/comonents/index.js' "
+    "coverage": "react-scripts test --env=jsdom --watchAll=false --coverage  --collectCoverageFrom='!src/context/**.js'  --collectCoverageFrom='!src/comonents/index.js' ",
+    "test-ct": "playwright test -c playwright-ct.config.js"
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +40,8 @@
     ]
   },
   "devDependencies": {
+    "@playwright/experimental-ct-react": "^1.32.1",
+    "@playwright/test": "^1.32.1",
     "enzyme": "^3.11.0",
     "jest": "^27.5.1",
     "msw": "^1.1.0",

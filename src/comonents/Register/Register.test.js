@@ -1,6 +1,11 @@
-import { findAllByText, fireEvent, render, screen } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import { BrowserRouter } from "react-router-dom";
 import Register from "./Register";
+
+
+
+
+
 
 test("Register render corectly", () => {
   render(
