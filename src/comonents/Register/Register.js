@@ -15,9 +15,7 @@ const Register = () => {
   });
 
 const passChecker=()=>{
-  console.log("ko")
    if(value.password===value.repassword) {
-    console.log("w")
       setError((state) => ({
         ...state,
         password:"",}))}
