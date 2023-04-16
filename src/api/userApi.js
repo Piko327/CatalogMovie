@@ -14,9 +14,8 @@ export async function login(data)
       })
         .then((response) => response.json())
        
-}
 
-
+    }
 export async function register(data)
 
 {

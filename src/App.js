@@ -1,5 +1,5 @@
 
-import './App.css';
+
 import { Create ,Dashboard,Delete,Details,Edit,Header,Home,Logout,Login,Register } from './comonents';
 import { Route, Routes } from 'react-router-dom';
 import { AuthContext, AuthProvider } from './context/AuthContext';
@@ -8,9 +8,12 @@ import { useState } from 'react';
 import { useLocalStorage } from './Hooks/useLocalStorage';
 import { DataContext } from './context/DataContext';
 function App() {
+const [auth,setAuth] = useLocalStorage('auth',{})
+const [data,setData]= useState([])
 
-const [data,setData]= useState({})
-const setInfo=(data)=>setData(data)
+const setLogin=(userData)=> setAuth(userData)
+const setInfo=(data)=> setData(data)
+
 
 
   return (
@@ -29,14 +32,13 @@ const setInfo=(data)=>setData(data)
     <Route path='/Edit/:id' element={<Edit/>}/>
     <Route path='Delete/:id' element={<Delete/>}/>
     <Route path='/Logout' element={<Logout/>}/>
+    <Route path='/*' element={<Home/>}/>
  </Routes>
     </DataContext.Provider>
     </AuthContext.Provider>
   <footer>
-    <p>@MusicLibrary</p>
-  </footer>
-
-
+    <p className='text-rose-100 text-3xl  text-center m-3'>@MusicLibrary</p>
+     </AuthContext.Provider>
 </>
   );
 
