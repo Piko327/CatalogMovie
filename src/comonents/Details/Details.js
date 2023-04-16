@@ -41,9 +41,7 @@ import { AuthContext } from "../../context/AuthContext"
 )}
       </div>
       </div>
-    
       </div>
-   
   </section>
 } 
 

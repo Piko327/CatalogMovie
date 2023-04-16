@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { register } from "../../api/userApi";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { useContext, nothing, useState } from "react";
+import { useContext, useState } from "react";
 
 const Register = () => {
   const { setLogin } = useContext(AuthContext);
@@ -133,7 +133,7 @@ const passChecker=()=>{
             onChange={ChangeHandler}
             onInput={validateEmail}
           />
-          {value.email?<div role={"error"}>{error.email}</div> : nothing}
+          {value.email?<div role={"error"}>{error.email}</div>:<></>}
           <input
             className=" block w-5/6 max- my-1 mx-3 rounded h-10 border-[1px] text-center border-rose-300"
             type="password"
@@ -153,7 +153,7 @@ const passChecker=()=>{
             onBlur={passChecker}
          
             />
-          {value.password ? <div role={"error"} >{error.password}</div>:nothing}
+          {value.password ? <div role={"error"}>{error.password}</div>:<></>}
           <button
           name='registerBtn'
             type="submit"
