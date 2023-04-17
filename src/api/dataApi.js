@@ -1,4 +1,4 @@
- const   URL="http://localhost:3030/data/albums" 
+ const   URL="https://back-tc2d.onrender.com/data/albums" 
 
 export async function getAll()
 { 

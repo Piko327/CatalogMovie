@@ -17,8 +17,6 @@ import { AuthContext } from "../../context/AuthContext"
       <div className='w-72 pl-4 md:w-80 md:h-[40vh]  md:p-9 md:text-xl lg:w-[30vw] lg:text-2xl lg:h-[50vh] lg:pt-[10vh]  bg-rose-700 shadow-2xl text-center rounded-b-xl pt-4  group-hover:rotate-1 group-hover:scale-105  relative z-100 md:rounded-none md:rounded-r-xl  transition-transform  '>
          <p className="flex justify-right"><strong className='text-primary' >Singer/Band:</strong><span  className='text-rose-200  md:truncate pl-1 italic font-medium' >{current.singer}</span></p>
          <p className="flex justify-right"><strong className='text-primary'  >Album name: </strong><span className='text-rose-200 pl-1 italic font-medium' >{current.album}</span></p>
-        <p className="flex justify-right"><strong className='text-primary' >Band:</strong><span  className='text-rose-200 pl-1 italic font-medium'>{current.singer}</span></p>
-        <p className="flex justify-right"> <strong className='text-primary'>Album name:</strong><span  className='text-rose-200 pl-1 italic font-medium'>{current.album}</span></p>
         <p className="flex justify-right"><strong className='text-primary'>Release date:</strong><span className='text-rose-200 pl-1 italic font-medium' id="details-release">{current.release}</span></p>
         <p className="flex justify-right"><strong className='text-primary'>Label:</strong><span className='text-rose-200 pl-1 italic font-medium' id="details-label">{current.label}</span></p>
         <p className="flex justify-right"><strong className='text-primary'>Sales:</strong><span className='text-rose-200 pl-1 italic font-medium' id="details-sales">{current.sales}</span></p>
