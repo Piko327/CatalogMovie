@@ -16,20 +16,23 @@ const Header = () => {
     <>
       {/*  NAV */}
       <header className=" px-4 h-24 text-white flex justify-between mx-auto max-w-[1240px] items-center ">
-        <Link to="/" className=" text-3xl font-bold text-rose-700 transition-transform hover:scale-105">
+        <Link
+          to="/"
+          className=" text-3xl font-bold text-rose-700 transition-transform hover:scale-105"
+        >
           REACT.
         </Link>
         <ul className=" text-white hidden md:flex font-500 text-[25px] font-">
           <li className="p-4 pl-20">
             <Link to="/Dashboard" className="">
-              Dashboard
+              Dashboard{" "}
             </Link>
           </li>
           {isEmpty(auth) ? (
             <>
               <li className="p-4 pl-20">
                 <Link to="/Login" className="">
-                  Login{" "}
+                  Login
                 </Link>
               </li>
               <li className="p-4 pl-20">
@@ -40,7 +43,8 @@ const Header = () => {
             <>
               <li className="p-4 px-20 truncate ">
                 <Link onClick={handlerNav} className="" to="/Create">
-                  Add Album
+                  {" "}
+                  Add Album{" "}
                 </Link>
               </li>
               <li className="mt-4">

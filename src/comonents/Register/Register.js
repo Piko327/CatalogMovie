@@ -14,27 +14,27 @@ const Register = () => {
     repassword: "",
   });
 
-const passChecker=()=>{
-   if(value.password===value.repassword) {
-      setError((state) => ({
-        ...state,
-        password:"",}))}
-      
-      else if(value.password!==value.repassword)
-      {
-        setError((state) => ({
-          ...state,
-          password:"Password should  be same"}))}
-        }
-  const CheckPassword = () => {
-    let message = "";
-    if (value.password==="") {
+  const checkSamenessPasswords = () => {
+    if (value.password === value.repassword) {
       setError((state) => ({
         ...state,
         password: "",
       }));
+    } else if (value.password !== value.repassword) {
+      setError((state) => ({
+        ...state,
+        password: "Password should  be same",
+      }));
     }
-    else if (value.password.length < 8) {
+  };
+  const validatePassword = () => {
+    let message = "";
+    if (value.password === "") {
+      setError((state) => ({
+        ...state,
+        password: "",
+      }));
+    } else if (value.password.length < 8) {
       message = "Password should be at least 8 characters long";
       setError((state) => ({
         ...state,
@@ -49,8 +49,7 @@ const passChecker=()=>{
         ...error,
         password: message,
       }));
-    }
-    else if (!/\d/.test(value.password)) {
+    } else if (!/\d/.test(value.password)) {
       message = "Password should contain at least one digit";
       setError((state) => ({
         ...state,
@@ -65,19 +64,17 @@ const passChecker=()=>{
         password: message,
       }));
     }
-    if(message==="")
-    {
+    if (message === "") {
       setError((state) => ({
         ...state,
         password: message,
-      }))
+      }));
     }
-    
   };
   const validateEmail = () => {
     const regex = /\S+@\S+\.\S+/;
 
-    if (regex.test(value.email) || value.email==="" ) {
+    if (regex.test(value.email) || value.email === "") {
       setError((state) => ({
         ...state,
         email: "",
@@ -99,20 +96,22 @@ const passChecker=()=>{
   const onSubmtHndler = (e) => {
     e.preventDefault();
 
-      let data = {
-        email: value.email,
-        password: value.password,};
+    let data = {
+      email: value.email,
+      password: value.password,
+    };
 
-      register(data).then((resp) => {
-        if (resp.message) {
-          setError((state) => ({
-            ...state,
-            password: resp.message,
-          }));
-        } else if (resp.email) {
-          setLogin(resp);
-          navigate("/");
-        }})
+    register(data).then((resp) => {
+      if (resp.message) {
+        setError((state) => ({
+          ...state,
+          password: resp.message,
+        }));
+      } else if (resp.email) {
+        setLogin(resp);
+        navigate("/");
+      }
+    });
   };
   return (
     <section className="bg-white px-[20vw] py-[10vh] min-h-[80vh] ">
@@ -133,7 +132,7 @@ const passChecker=()=>{
             onChange={ChangeHandler}
             onInput={validateEmail}
           />
-          {value.email?<div role={"error"}>{error.email}</div>:<></>}
+          {value.email && <div>{error.email}</div>}
           <input
             className=" block w-5/6 max- my-1 mx-3 rounded h-10 border-[1px] text-center border-rose-300"
             type="password"
@@ -141,29 +140,36 @@ const passChecker=()=>{
             placeholder="password"
             value={value.password}
             onChange={ChangeHandler}
-            onInput={CheckPassword}
+            onInput={validatePassword}
           />
-             <input
+          <input
             className=" block w-5/6 max- my-1 mx-3 rounded h-10 border-[1px] text-center border-rose-300"
             type="password"
             name="repassword"
             placeholder="repassword"
             value={value.repassword}
             onChange={ChangeHandler}
-            onBlur={passChecker}
-         
-            />
-          {value.password ? <div role={"error"}>{error.password}</div>:<></>}
+            onBlur={checkSamenessPasswords}
+          />
+          {value.password && <div>{error.password}</div>}
           <button
-          name='registerBtn'
+            name="registerBtn"
             type="submit"
             className="mt-5 border-[0.5px] enabled:mb-7 trxt-primary border-rose-900 italic text-semibold rounded-full capitalize px-6 m-1 py-1 text-bold bg-rose-200 enabled:hover:bg-primary enabled:hover:text-rose-200 duration-500 ease-in-out enabled:hover:border-rose-700"
-            disabled={ !(Object.values(error).every(x=>x==="") && Object.values(value).every(x=>x!==""))}
+            disabled={
+              !(
+                Object.values(error).every((x) => x === "") &&
+                Object.values(value).every((x) => x !== "")
+              )
+            }
           >
             register
           </button>
           <p className="text-rose-100 font-mono text-center m-2">
-            Already registered? <Link className='text-primary text-bold italic' to="/Login">Login</Link>
+            Already registered?{" "}
+            <Link className="text-primary text-bold italic" to="/Login">
+              Login
+            </Link>
           </p>
         </form>
       </div>
