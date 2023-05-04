@@ -1,6 +1,4 @@
-# Album Store
-
-The Album store allows the user to save their albums.
+# Music Libary
 
 ## Usage
 
@@ -9,25 +7,23 @@ To use my app, follow these steps:
 1. Open your web browser.
 2. Navigate to `https://album-store-ffa39.web.app/`.
 
-## Function
+### Function
 
 - Function  1: Allows users to create a new account.
 - Function  2: Allows users to login.
 - Function  3: Allows users to create new albums.
 - Function  4: Allows users to edit their albums.
 - Function  5: Allows users to delete their albums.
-- Function  6: Allows users to add albums.
 
-## Contributing
+#### Technologies
+1. React
+2. Tailwind CSS for design
+3. SoftUni server for Back-end and host it with Render (cloud application hosting tool)
+4. Firebase for deployment
 
-If you would like to contribute to my app, please follow these guidelines:
-
-1. Fork the repo.
-2. Create a new branch.
-3. Make your changes.
-4. Submit a pull request.
+##### SreenShoots
 
 
-## Contact
 
-If you have any questions or feedback, please email me at fiki.busnes@gmail.com.
+
+
