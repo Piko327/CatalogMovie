@@ -2,7 +2,7 @@ const Home = () => {
   return (
     <section className=" min-h-[80vh] flex justify-center	bg-white ">
       <h1 className="absolute left-auto top-[20%] text-center z-20 w-full text-6xl font-bold text-[#ed1245] p-[20px] pb-0">
-        MUSIC LiBARY
+        MUSIC LIBRARY
       </h1>
       <img
         className="w-[100vw] z-0 sm:relative sm:order-[-1] max-h-84 max-w-xl"
