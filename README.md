@@ -1,4 +1,4 @@
-# Music Libary
+# Music Library
 
 ## Usage
 
@@ -26,7 +26,6 @@ To use my app, follow these steps:
 
 ## Screenshot
 
-![App Screenshot](https://github.com/Piko327/musicLibary/blob/main-almost/public/ScreenShots/mobile_3.png?raw=true)
 
 ![App Screenshot](https://github.com/Piko327/musicLibary/blob/main-almost/public/ScreenShots/mobile_2.png?raw=true)
 
